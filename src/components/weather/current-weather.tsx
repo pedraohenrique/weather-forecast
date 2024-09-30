@@ -7,7 +7,7 @@ import ForecastWeatherControl from './forecast-weather-control';
 import QueryResult from '../query-result';
 import { useOpenWeatherMap } from '../../hooks';
 import { CurrentWeatherResponse } from '../../models';
-import { formatWindSpeed } from '../../utils';
+import { formatWindSpeed, getWheatherBackground } from '../../utils';
 
 export interface CurrentWeatherProps {
   cityId: string;
@@ -32,7 +32,18 @@ const CurrentWeather: React.FC<
 
   return (
     <QueryResult error={error} loading={loading} data={data}>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box
+        margin={{ md: 8, sm: 4 }}
+        borderRadius={6}
+        padding={5}
+        sx={{
+          color: 'white',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundImage: getWheatherBackground(data?.weather[0].main ?? ''),
+        }}
+      >
         <Grid2 container columnSpacing={2} rowSpacing={1}>
           <Grid2
             size={6}

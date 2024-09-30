@@ -83,8 +83,14 @@ const ForecastWeatherTable: React.FC<
         pages.map((page, index) => (
           <Button
             key={`page-button-${index}`}
+            // variant="contained"
             variant={currentPage === index ? 'contained' : 'outlined'}
-            sx={{ marginTop: 2, marginRight: 2 }}
+            color="primary"
+            sx={{
+              marginTop: 2,
+              marginRight: 2,
+              backgroundColor: currentPage === index ? 'primary' : 'ghostwhite',
+            }}
             onClick={() => setCurrentPage(index)}
           >
             {page}
