@@ -43,7 +43,7 @@ const CurrentWeather: React.FC<
             <Avatar
               alt="Remy Sharp"
               sx={{ width: 72, height: 72 }}
-              src={`http://openweathermap.org/img/w/${data?.weather[0].icon}.png`}
+              src={`https://openweathermap.org/img/w/${data?.weather[0].icon}.png`}
             />
           </Grid2>
           <Grid2 display="flex" justifyContent="right" alignItems="center">
